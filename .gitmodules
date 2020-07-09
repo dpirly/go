@@ -1,0 +1,3 @@
+[submodule "scpi/scpi-parser"]
+	path = scpi/scpi-parser
+	url = https://github.com/dpirly/scpi-parser.git
