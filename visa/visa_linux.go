@@ -31,7 +31,7 @@ import (
 
 
 /* global resource manager */
-var rm C.ViSession
+var rm C.ViSessionfmt
 
 func init(){
 	C.viOpenDefaultRM(&rm)
@@ -46,7 +46,7 @@ func Open(res string, timeout int32) (s C.ViSession, err error){
 	C.free(unsafe.Pointer(name))
 
 	if r != C.VI_SUCCESS{
-		return s, errors.New(fmt.Sprintf("viOpen error, code is %d", r))
+		return s, errors.New(fmt.Sprintf("viOpen error, code is %d", int(r)))
 	}
 	return s, err
 }
